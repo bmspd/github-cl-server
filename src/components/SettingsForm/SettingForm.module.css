@@ -1,0 +1,21 @@
+.title {
+    font-family: 'YS Text', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+
+.titleDescription {
+    font-family: 'YS Text', sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    color: #7F8285;
+}
+
+.formStyles {
+    margin-left: 6%;
+}
+
+.formButtons {
+    margin-top: 50px;
+}
