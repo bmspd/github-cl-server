@@ -1,10 +1,10 @@
 .itemStyle {
-    color: #7F8285;
-    font-family: 'YS Text', sans-serif;
-    font-weight: normal;
-    font-size: 13px;
-    cursor: pointer;
+  color: #7f8285;
+  font-family: "YS Text", sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  cursor: pointer;
 }
 .itemStyle:hover {
-    color:red;
+  color: red;
 }

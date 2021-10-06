@@ -1,54 +1,53 @@
 .header_text {
-    font-family: 'YS Text', sans-serif;
-    font-weight: normal;
-    font-size: 24px;
-    color: #7F8285;
+  font-family: "YS Text", sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+  color: #7f8285;
 }
 
 .header_line {
-    margin-top: 20px;
-    margin-left: 6%;
-    margin-right: 6%;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
+  margin-top: 20px;
+  margin-left: 6%;
+  margin-right: 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .buttonNoStyle {
-    border: none;
-    outline: none;
-    background: white;
-    cursor: pointer;
-    padding-left: 0;
+  border: none;
+  outline: none;
+  background: white;
+  cursor: pointer;
+  padding-left: 0;
 }
 
 .centeredBlock {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .infoText {
-    font-family: 'YS Text', sans-serif;
-    font-weight: normal;
-    font-size: 13px;
-    color: #000;
-    text-align: center;
+  font-family: "YS Text", sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  color: #000;
+  text-align: center;
 }
 
 .footer {
-    position: absolute;
-    width: 100%;
-    height: 32px;
-    bottom: 0;
-    left: 0;
-    background-color: #F0F2F3;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  height: 32px;
+  bottom: 0;
+  left: 0;
+  background-color: #f0f2f3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

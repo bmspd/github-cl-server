@@ -1,26 +1,25 @@
 .title {
-    font-family: 'YS Text', sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    color: #000;
+  font-family: "YS Text", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
 }
 
 .titleDescription {
-    font-family: 'YS Text', sans-serif;
-    font-size: 13px;
-    font-weight: normal;
-    color: #7F8285;
+  font-family: "YS Text", sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color: #7f8285;
 }
 
 .formStyles {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-left: 6%;
-    margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-left: 6%;
+  margin-top: 4%;
 }
 .buttonDiv {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
-

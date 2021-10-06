@@ -1,49 +1,54 @@
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Settings from "./pages/Settings/Settings";
 import HistoryRoute from "./pages/History/HistoryRoute";
-import React, {useState} from "react";
-import {DataContext} from "./context";
-import './App.css'
+import React, { useState } from "react";
+import { DataContext } from "./context";
+import "./App.css";
 import cl from "./pages/StartPage/StartPage.module.css";
 import FooterMenuItems from "./components/FooterMenuItems/FooterMenuItems";
 import FooterMenuItem from "./components/FooterMenuItem/FooterMenuItem";
 import StartPage from "./pages/StartPage/StartPage";
 
 function App() {
-    const [gitHubRepo, setGitHubRepo] = useState("");
-    const [buildCommand, setBuildCommand] = useState("");
-    const [mainBranch, setMainBranch] = useState("");
-    const [checkSettings, setCheckSettings] = useState(false)
-    const contextData = {
-        checkSettings, setCheckSettings,
-        gitHubRepo, setGitHubRepo,
-        buildCommand, setBuildCommand,
-        mainBranch, setMainBranch,
-            }
+  const [gitHubRepo, setGitHubRepo] = useState("");
+  const [buildCommand, setBuildCommand] = useState("");
+  const [mainBranch, setMainBranch] = useState("");
+  const [checkSettings, setCheckSettings] = useState(false);
+  const contextData = {
+    checkSettings,
+    setCheckSettings,
+    gitHubRepo,
+    setGitHubRepo,
+    buildCommand,
+    setBuildCommand,
+    mainBranch,
+    setMainBranch,
+  };
   return (
-      <>
-    <DataContext.Provider value={contextData}>
+    <>
+      <DataContext.Provider value={contextData}>
         <BrowserRouter>
-            <Switch >
-              <Route exact path="/">
-                <HistoryRoute/>
-              </Route>
-              <Route exact path="/settings">
-                <Settings/>
-              </Route>
-                <Route exact path="/start">
-                    <StartPage/>
-                </Route>
-            </Switch>
+          <Switch>
+            <Route exact path="/">
+              <HistoryRoute />
+            </Route>
+            <Route exact path="/settings">
+              <Settings />
+            </Route>
+            <Route exact path="/start">
+              <StartPage />
+            </Route>
+          </Switch>
         </BrowserRouter>
-    </DataContext.Provider>
-    <div className={cl.footer}>
-        <FooterMenuItems
-            names={["Support", "Learning", "Русская версия"]}
+      </DataContext.Provider>
+      <div className={cl.footer}>
+        <FooterMenuItems names={["Support", "Learning", "Русская версия"]} />
+        <FooterMenuItem
+          styles={{ marginRight: "6%" }}
+          name="© 2020 Your Name"
         />
-        <FooterMenuItem styles={{marginRight: '6%'}} name="© 2020 Your Name"/>
-    </div>
-      </>
+      </div>
+    </>
   );
 }
 
