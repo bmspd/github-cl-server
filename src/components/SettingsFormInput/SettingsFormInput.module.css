@@ -19,6 +19,7 @@
     font-weight: normal;
     font-size: 13px;
 }
+
 .inputStyles::placeholder {
     font-family: 'YS Text', sans-serif;
     font-weight: normal;

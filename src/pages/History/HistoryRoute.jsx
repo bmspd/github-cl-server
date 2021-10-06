@@ -6,8 +6,8 @@ const HistoryRoute = () => {
     const {checkSettings} = useContext(DataContext);
     return (
         checkSettings
-            ? <Redirect to={"/settings"}/>
-            : <History/>
+            ? <History/>
+            : <Redirect to={"/start"} />
     );
 };
 

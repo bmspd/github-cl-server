@@ -6,6 +6,7 @@
 }
 
 .header_line {
+    margin-top: 20px;
     margin-left: 6%;
     margin-right: 6%;
     display:flex;
@@ -17,16 +18,19 @@
     outline: none;
     background: white;
     cursor: pointer;
+    padding-left: 0;
 }
 
 .centeredBlock {
     position: fixed;
     display: flex;
     flex-direction: column;
+    gap: 30px;
     align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
 }
 
 .infoText {

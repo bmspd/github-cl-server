@@ -1,18 +1,20 @@
-import React from 'react';
-import cl from "../History/History.module.css";
-import classes from "./Setting.module.css"
-import {Link} from "react-router-dom";
-import settingsBtn from "../../images/01_enabled.svg";
+import React, {useContext} from 'react';
+import cl from "../StartPage/StartPage.module.css";
 import SettingsForm from "../../components/SettingsForm/SettingsForm";
+import {DataContext} from "../../context";
+import {Redirect} from "react-router-dom";
 
 const Settings = () => {
+    const data = useContext(DataContext);
     return (
+        data.checkSettings === false ?
         <>
         <div className={cl.header_line}>
             <p className={cl.header_text}>School Cl server</p>
         </div>
         <SettingsForm />
         </>
+        : <Redirect to="/"/>
     );
 };
 

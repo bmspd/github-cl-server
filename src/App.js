@@ -1,17 +1,25 @@
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Settings from "./pages/Settings/Settings";
 import HistoryRoute from "./pages/History/HistoryRoute";
-import React from "react";
+import React, {useState} from "react";
 import {DataContext} from "./context";
 import './App.css'
-import cl from "./pages/History/History.module.css";
+import cl from "./pages/StartPage/StartPage.module.css";
 import FooterMenuItems from "./components/FooterMenuItems/FooterMenuItems";
 import FooterMenuItem from "./components/FooterMenuItem/FooterMenuItem";
+import StartPage from "./pages/StartPage/StartPage";
 
 function App() {
+    const [gitHubRepo, setGitHubRepo] = useState("");
+    const [buildCommand, setBuildCommand] = useState("");
+    const [mainBranch, setMainBranch] = useState("");
+    const [checkSettings, setCheckSettings] = useState(false)
     const contextData = {
-        checkSettings : false,
-    }
+        checkSettings, setCheckSettings,
+        gitHubRepo, setGitHubRepo,
+        buildCommand, setBuildCommand,
+        mainBranch, setMainBranch,
+            }
   return (
       <>
     <DataContext.Provider value={contextData}>
@@ -23,6 +31,9 @@ function App() {
               <Route exact path="/settings">
                 <Settings/>
               </Route>
+                <Route exact path="/start">
+                    <StartPage/>
+                </Route>
             </Switch>
         </BrowserRouter>
     </DataContext.Provider>
