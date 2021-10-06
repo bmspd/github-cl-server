@@ -11,6 +11,15 @@ import { Redirect } from "react-router-dom";
 
 const SettingsForm = () => {
   const data = useContext(DataContext);
+  const saveButtonHandler = () => {
+    if (
+      data.gitHubRepo.length !== 0 &&
+      data.buildCommand.length !== 0 &&
+      data.mainBranch.length !== 0
+    )
+      data.setCheckSettings(true);
+  };
+
   return (
     <div className={classes.formStyles}>
       <div>
@@ -47,12 +56,7 @@ const SettingsForm = () => {
         </p>
       </div>
       <div className={classes.buttonDiv}>
-        <button
-          onClick={() => {
-            data.setCheckSettings(true);
-          }}
-          className={cl.buttonNoStyle}
-        >
+        <button onClick={saveButtonHandler} className={cl.buttonNoStyle}>
           <img src={saveBtn} />
         </button>
         <button className={cl.buttonNoStyle}>

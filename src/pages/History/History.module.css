@@ -1,0 +1,13 @@
+.repoNameStyle {
+    font-family: "YS Text", sans-serif;
+    font-weight: 500;
+    color: #000;
+    font-size: 24px;
+}
+
+.mainContentStyle {
+    margin-left: 6%;
+    margin-right: 6%;
+    display: flex;
+    flex-direction: column;
+}

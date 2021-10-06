@@ -28,3 +28,7 @@
   -moz-font-feature-settings: "liga", "kern";
   font-feature-settings: "liga", "kern";
 }
+p {
+  margin-block-start:0;
+  margin-block-end:0;
+}
