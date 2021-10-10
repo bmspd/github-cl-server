@@ -45,7 +45,7 @@ function App() {
         <FooterMenuItems names={["Support", "Learning", "Русская версия"]} />
         <FooterMenuItem
           styles={{ marginRight: "6%" }}
-          name="© 2020 Your Name"
+          name="© 2021 Your Name"
         />
       </div>
     </>

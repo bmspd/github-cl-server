@@ -7,15 +7,15 @@ import HistoryLogInfo from "./HistoryLogInfo";
 const mapping = {
   failure: {
     icon: failureIcon,
-    color: "red",
+    color: "#FF3333",
   },
   pending: {
     icon: pendingIcon,
-    color: "orange",
+    color: "#FF9A00",
   },
   success: {
     icon: successIcon,
-    color: "green",
+    color: "#00B341",
   },
 };
 const HistoryLog = ({ info }) => {

@@ -32,3 +32,6 @@ p {
   margin-block-start:0;
   margin-block-end:0;
 }
+* {
+  font-family: "YS Text", sans-serif;
+}
