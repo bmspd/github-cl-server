@@ -15,6 +15,7 @@ function App() {
   const [mainBranch, setMainBranch] = useState("master");
   const [checkSettings, setCheckSettings] = useState(false);
   const [historyLength, setHistoryLength] = useState(6);
+  const [syncTime, setSyncTime] = useState("10");
   const contextData = {
     checkSettings,
     setCheckSettings,
@@ -26,6 +27,8 @@ function App() {
     setMainBranch,
     historyLength,
     setHistoryLength,
+    syncTime,
+    setSyncTime,
   };
   return (
     <>

@@ -8,8 +8,9 @@ const SettingsFormInput = ({
   name = "",
   placeholder = "",
   value = "",
+  type = "",
 }) => {
-  return value ? (
+  return type === "numbers" ? (
     <input
       className={cl.inputStyles}
       value={value}
@@ -20,12 +21,13 @@ const SettingsFormInput = ({
         marginLeft: "10px",
         marginRight: "10px",
       }}
+      onChange={(e) => setStateValue(e.target.value)}
     />
   ) : (
     <div>
       <p className={cl.inputTitle}>
         {name}
-        <sup className={cl.redColor}> *</sup>
+        {type === "optional" ? null : <sup className={cl.redColor}> *</sup>}
       </p>
       <InputWithIcon
         placeholder={placeholder}

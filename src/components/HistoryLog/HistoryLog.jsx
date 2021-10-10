@@ -5,6 +5,7 @@ import pendingIcon from "../../images/pending.svg";
 import failureIcon from "../../images/failure.svg";
 import HistoryLogInfo from "./HistoryLogInfo";
 import HistoryLogTime from "./HistoryLogTime";
+import CustomButton from "../CustomButton/CustomButton";
 const mapping = {
   failure: {
     icon: failureIcon,

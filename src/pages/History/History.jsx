@@ -14,12 +14,19 @@ import {
   Mobile,
   Tablet,
 } from "../../components/MediaQuery/MediaQuery";
+import CustomButton from "../../components/CustomButton/CustomButton";
 const History = () => {
   const [openModal, setOpenModal] = useState(false);
   const buildButtonHandler = () => {
     setOpenModal(true);
   };
   const data = useContext(DataContext);
+  const showMoreHandler = () => {
+    data.setHistoryLength(histLogs.length);
+  };
+  const hideHandler = () => {
+    data.setHistoryLength(6);
+  };
   return (
     <>
       {openModal ? (
@@ -52,6 +59,25 @@ const History = () => {
         {histLogs.slice(0, data.historyLength).map((el, index) => (
           <HistoryLog key={index} info={el} />
         ))}
+        <div style={{ width: "auto", marginTop: "10px" }}>
+          {data.historyLength === 6 ? (
+            <CustomButton
+              bgColor="rgb(230,230,230)"
+              outlineColor="rgb(179,179,179)"
+              handler={showMoreHandler}
+            >
+              Show more
+            </CustomButton>
+          ) : (
+            <CustomButton
+              bgColor="rgb(230,230,230)"
+              outlineColor="rgb(179,179,179)"
+              handler={hideHandler}
+            >
+              Hide
+            </CustomButton>
+          )}
+        </div>
       </div>
     </>
   );

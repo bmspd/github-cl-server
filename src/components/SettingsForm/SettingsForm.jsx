@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import classes from "./SettingForm.module.css";
-import cl from "../../pages/StartPage/StartPage.module.css";
 import clSFI from "../SettingsFormInput/SettingsFormInput.module.css";
-import saveBtn from "../../images/formSaveBtn.svg";
-import cancelBtn from "../../images/formCancelBtn.svg";
 
 import SettingsFormInput from "../SettingsFormInput/SettingsFormInput";
 import { DataContext } from "../../context";
@@ -21,10 +18,6 @@ const SettingsForm = () => {
       data.setCheckSettings(true);
       console.log(data.setCheckSettings);
     }
-  };
-  const cancelButtonHandler = () => {
-    //data.setCheckSettings(true);
-    console.log(data.checkSettings);
   };
   return (
     <div className={classes.formStyles}>
@@ -51,12 +44,17 @@ const SettingsForm = () => {
         setStateValue={data.setMainBranch}
         name="Main branch"
         placeholder="your-main-branch-name"
+        type="optional"
       />
       <div>
         <p className={clSFI.inputStyles} style={{ paddingLeft: 0 }}>
           Synchronize every
           <span>
-            <SettingsFormInput value={10} />{" "}
+            <SettingsFormInput
+              type="numbers"
+              value={data.syncTime}
+              setStateValue={data.setSyncTime}
+            />{" "}
           </span>
           minutes
         </p>
@@ -73,7 +71,6 @@ const SettingsForm = () => {
         <CustomButton
           bgColor="rgb(230,230,230)"
           outlineColor="rgb(179,179,179)"
-          handler={cancelButtonHandler}
         >
           <Link to="/start">
             <div
