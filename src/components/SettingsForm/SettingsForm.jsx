@@ -7,7 +7,8 @@ import cancelBtn from "../../images/formCancelBtn.svg";
 
 import SettingsFormInput from "../SettingsFormInput/SettingsFormInput";
 import { DataContext } from "../../context";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import CustomButton from "../CustomButton/CustomButton";
 
 const SettingsForm = () => {
   const data = useContext(DataContext);
@@ -16,10 +17,15 @@ const SettingsForm = () => {
       data.gitHubRepo.length !== 0 &&
       data.buildCommand.length !== 0 &&
       data.mainBranch.length !== 0
-    )
+    ) {
       data.setCheckSettings(true);
+      console.log(data.setCheckSettings);
+    }
   };
-
+  const cancelButtonHandler = () => {
+    //data.setCheckSettings(true);
+    console.log(data.checkSettings);
+  };
   return (
     <div className={classes.formStyles}>
       <div>
@@ -56,12 +62,28 @@ const SettingsForm = () => {
         </p>
       </div>
       <div className={classes.buttonDiv}>
-        <button onClick={saveButtonHandler} className={cl.buttonNoStyle}>
-          <img src={saveBtn} />
-        </button>
-        <button className={cl.buttonNoStyle}>
-          <img src={cancelBtn} />
-        </button>
+        <CustomButton
+          bgColor="rgb(255,204,0)"
+          outlineColor="#B38F00"
+          handler={saveButtonHandler}
+        >
+          Save
+        </CustomButton>
+
+        <CustomButton
+          bgColor="rgb(230,230,230)"
+          outlineColor="rgb(179,179,179)"
+          handler={cancelButtonHandler}
+        >
+          <Link to="/start">
+            <div
+              className={classes.noDecorate}
+              style={{ color: "black", textDecoration: "none" }}
+            >
+              Cancel
+            </div>
+          </Link>
+        </CustomButton>
       </div>
     </div>
   );

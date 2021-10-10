@@ -3,11 +3,11 @@ import cl from "./SettingsFormInput.module.css";
 import xIcon from "../../images/x-icon.svg";
 import InputWithIcon from "../InputWithIcon/InputWithIcon";
 const SettingsFormInput = ({
-  stateValue,
-  setStateValue,
-  name,
-  placeholder,
-  value,
+  stateValue = "",
+  setStateValue = () => {},
+  name = "",
+  placeholder = "",
+  value = "",
 }) => {
   return value ? (
     <input

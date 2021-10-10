@@ -26,3 +26,8 @@
   font-size: 13px;
   opacity: 0.5;
 }
+@media (max-width: 600px) {
+  .inputStyles {
+    width: 75vw;
+  }
+}

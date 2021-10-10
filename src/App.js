@@ -12,8 +12,9 @@ import StartPage from "./pages/StartPage/StartPage";
 function App() {
   const [gitHubRepo, setGitHubRepo] = useState("");
   const [buildCommand, setBuildCommand] = useState("");
-  const [mainBranch, setMainBranch] = useState("");
+  const [mainBranch, setMainBranch] = useState("master");
   const [checkSettings, setCheckSettings] = useState(false);
+  const [historyLength, setHistoryLength] = useState(6);
   const contextData = {
     checkSettings,
     setCheckSettings,
@@ -23,6 +24,8 @@ function App() {
     setBuildCommand,
     mainBranch,
     setMainBranch,
+    historyLength,
+    setHistoryLength,
   };
   return (
     <>
@@ -44,7 +47,7 @@ function App() {
       <div className={cl.footer}>
         <FooterMenuItems names={["Support", "Learning", "Русская версия"]} />
         <FooterMenuItem
-          styles={{ marginRight: "6%" }}
+          styles={{ marginRight: "6%", marginLeft: "6%" }}
           name="© 2021 Your Name"
         />
       </div>

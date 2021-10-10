@@ -4,6 +4,7 @@ import successIcon from "../../images/success.svg";
 import pendingIcon from "../../images/pending.svg";
 import failureIcon from "../../images/failure.svg";
 import HistoryLogInfo from "./HistoryLogInfo";
+import HistoryLogTime from "./HistoryLogTime";
 const mapping = {
   failure: {
     icon: failureIcon,
@@ -24,12 +25,10 @@ const HistoryLog = ({ info }) => {
 
   return (
     <div className={cl.mainStyle}>
-      <img
-        style={{ position: "absolute", left: "30px", top: "16px" }}
-        src={icon}
-      />
+      <img className={cl.statusIconStyle} src={icon} />
       <div className={cl.innerContent}>
         <HistoryLogInfo color={color} info={info} />
+        <HistoryLogTime date={info.date} clockwatch={info.clockwatch} />
       </div>
     </div>
   );

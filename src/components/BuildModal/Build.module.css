@@ -1,0 +1,38 @@
+.modalOut {
+    z-index:2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    left: 0;
+    top: 0;
+}
+
+.modalInner {
+    padding: 20px;
+    z-index:3;
+    border-radius: 4px;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.modal_h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+}
+.modal_p {
+    font-weight: normal;
+    font-size: 13px;
+}
+.buttonSection {
+    display: flex;
+    gap: 15px;
+}

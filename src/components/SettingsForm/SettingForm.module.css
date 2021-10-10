@@ -17,9 +17,22 @@
   flex-direction: column;
   gap: 30px;
   margin-left: 6%;
+  margin-right: 6%;
   margin-top: 4%;
 }
 .buttonDiv {
   display: flex;
   gap: 20px;
+}
+.noDecorate {
+  text-decoration: none;
+}
+.noDecorate a {
+  text-decoration: none;
+}
+
+@media (max-width: 400px) {
+  .buttonDiv {
+    flex-direction: column;
+  }
 }
