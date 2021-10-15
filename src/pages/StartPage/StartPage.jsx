@@ -5,8 +5,7 @@ import settingsIcon from "../../images/settings_big_icon.svg";
 import smallSettingsIcon from "../../images/settings-button.svg";
 import openSettingsBtn from "../../images/openSettingsBtn.svg";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
-import { Desktop, Mobile } from "../../components/MediaQuery/MediaQuery";
+import {Desktop, Mobile, Tablet} from "../../components/MediaQuery/MediaQuery";
 const StartPage = () => {
   return (
     <>
@@ -17,6 +16,9 @@ const StartPage = () => {
             <Desktop>
               <img src={settingsBtn} />
             </Desktop>
+            <Tablet>
+              <img src={smallSettingsIcon} />
+            </Tablet>
             <Mobile>
               <img src={smallSettingsIcon} />
             </Mobile>

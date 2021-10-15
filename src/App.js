@@ -14,9 +14,13 @@ function App() {
   const [buildCommand, setBuildCommand] = useState("");
   const [mainBranch, setMainBranch] = useState("master");
   const [checkSettings, setCheckSettings] = useState(false);
+  const [changeSettings, setChangeSettings] = useState(false);
   const [historyLength, setHistoryLength] = useState(6);
   const [syncTime, setSyncTime] = useState("10");
+  const [activeValues, setActiveValues] = useState({git: "", build: "", branch: "master"})
   const contextData = {
+    activeValues, setActiveValues,
+    changeSettings, setChangeSettings,
     checkSettings,
     setCheckSettings,
     gitHubRepo,

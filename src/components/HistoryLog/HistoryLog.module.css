@@ -6,14 +6,16 @@
     position: relative;
     margin-top: 10px;
 }
+.mainStyle:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 2px 8px rgba(67, 68, 69, 0.3);
+
+}
 .innerContent {
     display: flex;
     justify-content: space-between;
     height: auto;
-    margin-top: 12px;
-    margin-left: 70px;
-    margin-right: 30px;
-    margin-bottom: 12px;
+    padding: 12px 30px 12px 70px;
 }
 .statusIconStyle {
     position: absolute;

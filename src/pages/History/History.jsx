@@ -33,7 +33,7 @@ const History = () => {
         <BuildModal openModal={openModal} setOpenModal={setOpenModal} />
       ) : null}
       <div className={cl.header_line}>
-        <p className={histClasses.repoNameStyle}>{data.gitHubRepo}</p>
+        <p className={histClasses.repoNameStyle}>{data.activeValues.git}</p>
         <div>
           <Desktop>
             <button className={cl.buttonNoStyle}>
@@ -48,7 +48,7 @@ const History = () => {
           <Link to="/settings">
             <button className={cl.buttonNoStyle}>
               <img
-                onClick={() => data.setCheckSettings(false)}
+                onClick={() => data.setChangeSettings(true)}
                 src={settingsIcon}
               />
             </button>
