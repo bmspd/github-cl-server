@@ -11,6 +11,6 @@ export const Mobile = ({ children }) => {
 };
 
 export const Tablet = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: 500 });
+  const isMobile = useMediaQuery({ maxWidth: 500 , minWidth: 321});
   return isMobile ? children : null;
 };

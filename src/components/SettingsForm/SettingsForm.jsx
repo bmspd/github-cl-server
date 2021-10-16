@@ -1,7 +1,7 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import classes from "./SettingForm.module.css";
 import clSFI from "../SettingsFormInput/SettingsFormInput.module.css";
-
+import btnClasses from "../../styles/buttonStyles.module.css";
 import SettingsFormInput from "../SettingsFormInput/SettingsFormInput";
 import { DataContext } from "../../context";
 import { Link, Redirect } from "react-router-dom";
@@ -10,25 +10,29 @@ const SettingsForm = () => {
   const data = useContext(DataContext);
   const [redirectToHistory, setRedirectHistory] = useState(false);
   const cancelButtonHandler = () => {
-      setRedirectHistory(true);
-      console.log(redirectToHistory, 'lol');
-  }
+    setRedirectHistory(true);
+  };
+  const checkInputs = (...inputs) => {
+    if (inputs.find((el) => el.length === 0) === undefined) return true;
+
+    return false;
+  };
   const saveButtonHandler = () => {
     if (
       data.gitHubRepo.length !== 0 &&
       data.buildCommand.length !== 0 &&
       data.mainBranch.length !== 0
     ) {
-        data.setCheckSettings(true);
-        data.setActiveValues({
-            git : data.gitHubRepo,
-            build: data.buildCommand,
-            branch: data.mainBranch
-        })
+      data.setCheckSettings(true);
+      data.setActiveValues({
+        git: data.gitHubRepo,
+        build: data.buildCommand,
+        branch: data.mainBranch,
+      });
     }
   };
   if (redirectToHistory === true) {
-      return <Redirect to={"/"}/>
+    return <Redirect to={"/"} />;
   }
   return (
     <div className={classes.formStyles}>
@@ -71,26 +75,23 @@ const SettingsForm = () => {
         </p>
       </div>
       <div className={classes.buttonDiv}>
-          <Link to={"/"}>
+        <Link to={"/"}>
+          <CustomButton
+            colorStyle={btnClasses.yellowBtn}
+            respHelper={btnClasses.btnResponsiveHelper}
+            handler={saveButtonHandler}
+            disabled={
+              !checkInputs(data.gitHubRepo, data.buildCommand, data.mainBranch)
+            }
+          >
+            Save
+          </CustomButton>
+        </Link>
         <CustomButton
-          bgColor="rgb(255,204,0)"
-          outlineColor="#B38F00"
-          handler={saveButtonHandler}
-        >
-          Save
-        </CustomButton>
-          </Link>
-        <CustomButton
-          bgColor="rgb(230,230,230)"
-          outlineColor="rgb(179,179,179)"
+          colorStyle={btnClasses.grayBtn}
           handler={cancelButtonHandler}
         >
-            <div
-              className={classes.noDecorate}
-              style={{ color: "black", textDecoration: "none" }}
-            >
-              Cancel
-            </div>
+          Cancel
         </CustomButton>
       </div>
     </div>

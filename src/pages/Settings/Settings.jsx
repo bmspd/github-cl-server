@@ -11,19 +11,10 @@ const Settings = () => {
             <div className={cl.header_line}>
                 <p className={cl.header_text}>School Cl server</p>
             </div>
-
-
-
-
-
-                                <SettingsForm/>
+            <SettingsForm/>
         </>
-
-
-
-
     ) : (
-                                 <Redirect to="/"/>
+        <Redirect to="/"/>
     );
 };
 

@@ -1,18 +1,23 @@
 import React from "react";
-const CustomButton = ({ children, bgColor, outlineColor, handler }) => {
+import btnClasses from "../../styles/buttonStyles.module.css";
+import classnames from "classnames";
+
+const CustomButton = ({
+  children,
+  colorStyle = null,
+  disabled = false,
+  headerStyle = null,
+  respHelper = null,
+  handler,
+}) => {
+  const classNames = classnames(
+    colorStyle,
+    btnClasses.customBtn,
+    headerStyle,
+    respHelper
+  );
   return (
-    <button
-      style={{
-        outlineColor: outlineColor,
-        cursor: "pointer",
-        height: 36,
-        border: "none",
-        backgroundColor: bgColor,
-        borderRadius: 5,
-        padding: "0px 20px",
-      }}
-      onClick={handler}
-    >
+    <button disabled={disabled} className={classNames} onClick={handler}>
       {children}
     </button>
   );
