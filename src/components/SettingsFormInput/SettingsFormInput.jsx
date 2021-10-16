@@ -3,13 +3,13 @@ import cl from "./SettingsFormInput.module.css";
 import xIcon from "../../images/x-icon.svg";
 import InputWithIcon from "../InputWithIcon/InputWithIcon";
 const SettingsFormInput = ({
-  stateValue = "",
-  setStateValue = () => {},
+  stateControl = ["", () => {}],
   name = "",
   placeholder = "",
   value = "",
   type = "",
 }) => {
+  const [stateValue, setStateValue] = stateControl;
   return type === "numbers" ? (
     <input
       className={cl.inputStyles}

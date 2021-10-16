@@ -10,6 +10,7 @@ import FooterMenuItem from "./components/FooterMenuItem/FooterMenuItem";
 import StartPage from "./pages/StartPage/StartPage";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
   const [gitHubRepo, setGitHubRepo] = useState("");
   const [buildCommand, setBuildCommand] = useState("");
   const [mainBranch, setMainBranch] = useState("master");
@@ -17,10 +18,16 @@ function App() {
   const [changeSettings, setChangeSettings] = useState(false);
   const [historyLength, setHistoryLength] = useState(6);
   const [syncTime, setSyncTime] = useState("10");
-  const [activeValues, setActiveValues] = useState({git: "", build: "", branch: "master"})
+  const [activeValues, setActiveValues] = useState({
+    git: "",
+    build: "",
+    branch: "master",
+  });
   const contextData = {
-    activeValues, setActiveValues,
-    changeSettings, setChangeSettings,
+    activeValues,
+    setActiveValues,
+    changeSettings,
+    setChangeSettings,
     checkSettings,
     setCheckSettings,
     gitHubRepo,
@@ -33,6 +40,8 @@ function App() {
     setHistoryLength,
     syncTime,
     setSyncTime,
+    isLoading,
+    setIsLoading,
   };
   return (
     <>

@@ -1,21 +1,22 @@
-import React, {useContext} from "react";
-import cl from "../StartPage/StartPage.module.css";
+import React, { useContext } from "react";
 import SettingsForm from "../../components/SettingsForm/SettingsForm";
-import {DataContext} from "../../context";
-import {Redirect} from "react-router-dom";
+import { DataContext } from "../../context";
+import { Redirect } from "react-router-dom";
+import Header from "../../components/Header/Header";
+import Title from "../../components/Header/Title";
 
 const Settings = () => {
-    const data = useContext(DataContext);
-    return data.checkSettings === false || data.changeSettings === true ? (
-        <>
-            <div className={cl.header_line}>
-                <p className={cl.header_text}>School Cl server</p>
-            </div>
-            <SettingsForm/>
-        </>
-    ) : (
-        <Redirect to="/"/>
-    );
+  const data = useContext(DataContext);
+  return data.checkSettings === false || data.changeSettings === true ? (
+    <>
+      <Header>
+        <Title />
+      </Header>
+      <SettingsForm />
+    </>
+  ) : (
+    <Redirect to="/" />
+  );
 };
 
 export default Settings;

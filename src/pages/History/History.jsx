@@ -15,6 +15,8 @@ import {
   Tablet,
 } from "../../components/MediaQuery/MediaQuery";
 import CustomButton from "../../components/CustomButton/CustomButton";
+import Header from "../../components/Header/Header";
+import Loading from "../../components/Loading/Loading";
 const History = () => {
   const [openModal, setOpenModal] = useState(false);
   const buildButtonHandler = () => {
@@ -27,12 +29,14 @@ const History = () => {
   const hideHandler = () => {
     data.setHistoryLength(6);
   };
-  return (
+  return data.isLoading ? (
+    <Loading />
+  ) : (
     <>
       {openModal ? (
         <BuildModal openModal={openModal} setOpenModal={setOpenModal} />
       ) : null}
-      <div className={cl.header_line}>
+      <Header>
         <p className={histClasses.repoNameStyle}>{data.activeValues.git}</p>
         <div>
           <Desktop>
@@ -54,7 +58,7 @@ const History = () => {
             </button>
           </Link>
         </div>
-      </div>
+      </Header>
       <div className={histClasses.mainContentStyle}>
         {histLogs.slice(0, data.historyLength).map((el, index) => (
           <HistoryLog key={index} info={el} />

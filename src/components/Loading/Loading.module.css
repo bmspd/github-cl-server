@@ -1,0 +1,11 @@
+.mainStyle {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+}
+.textStyle {
+    text-align: center;
+}

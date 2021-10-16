@@ -1,18 +1,4 @@
-.header_text {
-  font-family: "YS Text", sans-serif;
-  font-weight: normal;
-  font-size: 24px;
-  color: #7f8285;
-}
 
-.header_line {
-  margin-top: 20px;
-  margin-left: 6%;
-  margin-right: 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .buttonNoStyle {
   border: none;
   outline: none;
