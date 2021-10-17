@@ -18,27 +18,31 @@ import CustomButton from "../../components/CustomButton/CustomButton";
 import Header from "../../components/Header/Header";
 import Loading from "../../components/Loading/Loading";
 import btnClasses from "../../styles/buttonStyles.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setHistoryLength, toggleBuildModal } from "../../store/store";
 const History = () => {
-  const [openModal, setOpenModal] = useState(false);
+  const dispatch = useDispatch();
+  const currentInput = useSelector((state) => state.currentInput);
+  const loaderStatus = useSelector((state) => state.loaderStatus);
+  const historyLogsLength = useSelector((state) => state.historyLength);
+  const modal = useSelector((state) => state.buildModal);
   const buildButtonHandler = () => {
-    setOpenModal(true);
+    dispatch(toggleBuildModal("opened"));
   };
   const data = useContext(DataContext);
   const showMoreHandler = () => {
-    data.setHistoryLength(histLogs.length);
+    dispatch(setHistoryLength(histLogs.length));
   };
   const hideHandler = () => {
-    data.setHistoryLength(6);
+    dispatch(setHistoryLength(6));
   };
-  return data.isLoading ? (
+  return loaderStatus === "active" ? (
     <Loading />
   ) : (
     <>
-      {openModal ? (
-        <BuildModal openModal={openModal} setOpenModal={setOpenModal} />
-      ) : null}
+      {modal === "opened" ? <BuildModal /> : null}
       <Header>
-        <p className={histClasses.repoNameStyle}>{data.activeValues.git}</p>
+        <p className={histClasses.repoNameStyle}>{currentInput.git}</p>
         <div>
           <Desktop>
             <button className={cl.buttonNoStyle}>
@@ -61,11 +65,11 @@ const History = () => {
         </div>
       </Header>
       <div className={histClasses.mainContentStyle}>
-        {histLogs.slice(0, data.historyLength).map((el, index) => (
+        {histLogs.slice(0, historyLogsLength).map((el, index) => (
           <HistoryLog key={index} info={el} />
         ))}
         <div style={{ width: "auto", marginTop: "10px" }}>
-          {data.historyLength === 6 ? (
+          {historyLogsLength === 6 ? (
             <CustomButton
               colorStyle={btnClasses.grayBtn}
               handler={showMoreHandler}

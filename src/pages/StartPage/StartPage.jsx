@@ -13,6 +13,7 @@ import CustomButton from "../../components/CustomButton/CustomButton";
 import btnClasses from "../../styles/buttonStyles.module.css";
 import Header from "../../components/Header/Header";
 import Title from "../../components/Header/Title";
+
 const StartPage = () => {
   return (
     <>

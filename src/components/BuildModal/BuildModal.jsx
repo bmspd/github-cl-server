@@ -6,9 +6,13 @@ import startPageClasses from "../../pages/StartPage/StartPage.module.css";
 import InputWithIcon from "../InputWithIcon/InputWithIcon";
 import btnClasses from "../../styles/buttonStyles.module.css";
 import CustomButton from "../CustomButton/CustomButton";
-const BuildModal = ({ openModal, setOpenModal }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { toggleBuildModal } from "../../store/store";
+const BuildModal = () => {
+  const dispatch = useDispatch();
+  const modal = useSelector((state) => state.buildModal);
   const closeModal = () => {
-    setOpenModal(false);
+    dispatch(toggleBuildModal("closed"));
   };
   const [commitHashInput, setCommitHashInput] = useState("");
   return (

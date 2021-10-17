@@ -6,8 +6,11 @@ import SettingsFormInput from "../SettingsFormInput/SettingsFormInput";
 import { DataContext } from "../../context";
 import { Link, Redirect } from "react-router-dom";
 import CustomButton from "../CustomButton/CustomButton";
-import Loader from "react-loader-spinner";
+import { useDispatch, useSelector } from "react-redux";
+import store, { fillCurrentInput, toggleLoader } from "../../store/store";
 const SettingsForm = () => {
+  const dispatch = useDispatch();
+  const loaderStatus = useSelector((state) => state.loaderStatus);
   const data = useContext(DataContext);
   const [redirectToHistory, setRedirectHistory] = useState(false);
   const cancelButtonHandler = () => {
@@ -19,13 +22,15 @@ const SettingsForm = () => {
   const saveButtonHandler = () => {
     if (data.gitHubRepo.length !== 0 && data.buildCommand.length !== 0) {
       data.setCheckSettings(true);
-      data.setActiveValues({
-        git: data.gitHubRepo,
-        build: data.buildCommand,
-        branch: data.mainBranch,
-      });
-      data.setIsLoading(true);
-      setTimeout(() => data.setIsLoading(false), 3000);
+      dispatch(
+        fillCurrentInput({
+          git: data.gitHubRepo,
+          build: data.buildCommand,
+          branch: data.mainBranch,
+        })
+      );
+      dispatch(toggleLoader("active"));
+      setTimeout(() => dispatch(toggleLoader("inactive")), 3000);
     }
   };
   /* Condition if data already inputted, prevent routing to Start page*/
