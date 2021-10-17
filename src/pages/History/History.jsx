@@ -17,6 +17,7 @@ import {
 import CustomButton from "../../components/CustomButton/CustomButton";
 import Header from "../../components/Header/Header";
 import Loading from "../../components/Loading/Loading";
+import btnClasses from "../../styles/buttonStyles.module.css";
 const History = () => {
   const [openModal, setOpenModal] = useState(false);
   const buildButtonHandler = () => {
@@ -66,18 +67,13 @@ const History = () => {
         <div style={{ width: "auto", marginTop: "10px" }}>
           {data.historyLength === 6 ? (
             <CustomButton
-              bgColor="rgb(230,230,230)"
-              outlineColor="rgb(179,179,179)"
+              colorStyle={btnClasses.grayBtn}
               handler={showMoreHandler}
             >
               Show more
             </CustomButton>
           ) : (
-            <CustomButton
-              bgColor="rgb(230,230,230)"
-              outlineColor="rgb(179,179,179)"
-              handler={hideHandler}
-            >
+            <CustomButton colorStyle={btnClasses.grayBtn} handler={hideHandler}>
               Hide
             </CustomButton>
           )}

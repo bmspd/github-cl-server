@@ -32,3 +32,14 @@
 .grayBtn:focus {
     border: 2px solid #B3B3B3;
 }
+
+.whiteBtn {
+    background-color: #FFF;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+.whiteBtn:hover {
+    background-color: #F2F5FF;
+}
+.grayBtn:focus {
+    border: 2px solid #B3B3B3;
+}
